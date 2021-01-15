@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 //seting
-app.set('port', 80);
+app.set('port', 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 //middleware
@@ -17,6 +17,6 @@ app.use(require('./routes'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //iniciando el servidor
-app.listen(app.get('port'), () => {
+app.listen(process.env.PORT || 3000), () => {
     console.log('Iniciado en el puerto', app.get('port'));
 });
