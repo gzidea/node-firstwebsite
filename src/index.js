@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 //seting
-app.set('port', 4000);
+app.set('port', 80);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 //middleware
